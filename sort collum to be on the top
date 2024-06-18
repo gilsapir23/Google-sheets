@@ -1,0 +1,7 @@
+function sortSheetOnEdit() {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("כל הלידים");
+  // Assume data is from column A to the last column with data
+  var lastColumn = sheet.getLastColumn();
+  var range = sheet.getRange(2, 1, sheet.getLastRow() - 1, lastColumn);  // Includes all columns with data
+  range.sort({column: 1, ascending: false});
+}
